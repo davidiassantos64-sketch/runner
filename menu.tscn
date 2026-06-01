@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://bkb16gm4f73x5"]
+
+[ext_resource type="Script" uid="uid://dgimt6jufu4rr" path="res://menu.gd" id="1_mae5d"]
+[ext_resource type="Texture2D" uid="uid://cff8dqiod1moc" path="res://R.png" id="1_ouk20"]
+[ext_resource type="FontFile" uid="uid://dx5a7vkgv8kc2" path="res://PressStart2P-Regular.ttf" id="2_mae5d"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4hy44"]
+texture = ExtResource("1_ouk20")
+modulate_color = Color(0.9344213, 0.0007313949, 0.93771, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytr4m"]
+bg_color = Color(0.32086813, 0.8232569, 0, 1)
+border_color = Color(0.85034907, 0.8263444, 0.22506231, 1)
+expand_margin_left = 60.0
+expand_margin_top = 8.0
+expand_margin_right = 58.0
+expand_margin_bottom = 11.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mae5d"]
+bg_color = Color(0.24416718, 0.64295185, 0, 1)
+border_color = Color(0.85034907, 0.8263444, 0.22506231, 1)
+expand_margin_left = 60.0
+expand_margin_top = 8.0
+expand_margin_right = 58.0
+expand_margin_bottom = 11.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l48gv"]
+bg_color = Color(0.3765619, 0.9518264, 0, 1)
+border_color = Color(0.85034907, 0.8263444, 0.22506231, 1)
+expand_margin_left = 60.0
+expand_margin_top = 8.0
+expand_margin_right = 58.0
+expand_margin_bottom = 11.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hy44"]
+bg_color = Color(0.8059397, 0, 0.10106332, 1)
+expand_margin_top = 9.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecwwl"]
+bg_color = Color(0.62373006, 0, 0.06844501, 1)
+expand_margin_top = 9.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kk3ma"]
+bg_color = Color(0.9798426, 0.00075108034, 0.13341868, 1)
+expand_margin_top = 9.0
+
+[node name="Menu" type="Control" unique_id=1659918948]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mae5d")
+
+[node name="Fundo" type="Panel" parent="." unique_id=1431247330]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1120.0
+offset_top = -214.0
+offset_right = 1162.3306
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_4hy44")
+
+[node name="Título" type="Label" parent="." unique_id=1966797522]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -408.0
+offset_top = -280.0
+offset_right = 408.0
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_mae5d")
+theme_override_font_sizes/font_size = 136
+text = "Runner"
+
+[node name="Botões" type="VBoxContainer" parent="." unique_id=379595497]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -74.0
+offset_right = 275.0
+offset_bottom = 162.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 54
+
+[node name="Jogar" type="Button" parent="Botões" unique_id=1732778756]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_mae5d")
+theme_override_font_sizes/font_size = 87
+theme_override_styles/normal = SubResource("StyleBoxFlat_ytr4m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mae5d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l48gv")
+text = "Jogar"
+
+[node name="Sair" type="Button" parent="Botões" unique_id=94697700]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mae5d")
+theme_override_font_sizes/font_size = 87
+theme_override_styles/normal = SubResource("StyleBoxFlat_4hy44")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ecwwl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kk3ma")
+text = "Sair"
+
+[connection signal="pressed" from="Botões/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Botões/Sair" to="." method="_on_sair_pressed"]

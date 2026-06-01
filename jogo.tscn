@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c30q2pg4uaasw"]
+
+[ext_resource type="Script" uid="uid://by712q4hs4reh" path="res://jogo.gd" id="1_evvns"]
+[ext_resource type="Texture2D" uid="uid://d37acvk064kyv" path="res://background.png" id="2_yq54j"]
+
+[node name="Jogo" type="Node2D" unique_id=1511975552]
+script = ExtResource("1_evvns")
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=1395635289]
+position = Vector2(576.3333, 324.00003)
+scale = Vector2(3.5979166, 3.6000004)
+texture = ExtResource("2_yq54j")
+
+[node name="Fundo2" type="Sprite2D" parent="." unique_id=1004171321]
+position = Vector2(1728, 324)
+scale = Vector2(3.6000001, 3.6000001)
+texture = ExtResource("2_yq54j")
+
+[node name="Chão" type="Sprite2D" parent="." unique_id=1079229193]
+
+[node name="Chão2" type="Sprite2D" parent="." unique_id=1157112567]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=247965886]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=101585065]
